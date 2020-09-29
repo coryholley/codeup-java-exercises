@@ -3,6 +3,8 @@ import java.util.Scanner;
 import static java.lang.Float.parseFloat;
 import static java.lang.Integer.parseInt;
 
+//scanner.nextLine(); < when not commenting out previous
+
 public class ConsoleExercises {
     public static void main(String[] args) {
         double pi = 3.14159;
