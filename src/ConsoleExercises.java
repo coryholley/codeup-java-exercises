@@ -73,7 +73,7 @@ public class ConsoleExercises {
             int volume = length * height * width;
 
             System.out.println("The area of the classroom is "+area+".\n The perimeter of the classroom is "+perimeter+".\n The volume of the classroom is "+volume+".");
-            //changed deliminator to a # to test and enter on one line. must add # at the end before entering. can now enter 34#23#23# enter.
-
+            //changed deliminator to a # to test and enter on one line. must add # at the end before entering. can now enter 34#23#23# enter. Does not work for array method because it is taking it in as one string.
+            //have to change to different deliminator for array method.
     }
 }
