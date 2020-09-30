@@ -15,12 +15,13 @@ public class ControlFlowExercises {
             // Create a header
             String header = "Number | " + "Squared | " + "Cubed   " + "\n"
                     +   "------ | " + "------- | " + "-----   " + "\n";
-            System.out.format("%-15s", header);
+            System.out.format("%-6s", header);
 
             int square = 0;
             int cube = 0;
 
             String row = "";
+            String leftAlign = " %-5d | %-7d | %-6d%n";
 
             for (int i = 1; i <= integer; i++)
             {
@@ -28,12 +29,7 @@ public class ControlFlowExercises {
                 square = i * i;
                 cube = i * i * i;
 
-                if (i < 4) {
-                    row = i + "      | " + square + "       | " + cube;
-                } else {
-                    row = i + "      | " + square + "      | " + cube;
-                }
-                System.out.format("%-15s\n", row);
+                System.out.format(leftAlign, i, square, cube);
             }
 
             // See if the user wants to continue
@@ -43,6 +39,7 @@ public class ControlFlowExercises {
 
         }
         while (!choice.equalsIgnoreCase("n"));
+
     }
 }
 
