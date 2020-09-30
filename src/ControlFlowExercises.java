@@ -44,14 +44,20 @@ public class ControlFlowExercises {
 }
 
 
-//    What number would you like to go up to? 5
+//    Convert given number grades into letter grades.
 //
-//        Here is your table!
+//        Prompt the user for a numerical grade from 0 to 100.
+//        Display the corresponding letter grade.
+//        Prompt the user to continue.
+//        Assume that the user will enter valid integers for the grades.
+//        The application should only continue if the user agrees to.
+//        Grade Ranges:
 //
-//        number | squared | cubed
-//        ------ | ------- | -----
-//        1      | 1       | 1
-//        2      | 4       | 8
-//        3      | 9       | 27
-//        4      | 16      | 64
-//        5      | 25      | 125
+//        A : 100 - 88
+//        B : 87 - 80
+//        C : 79 - 67
+//        D : 66 - 60
+//        F : 59 - 0
+//        Bonus
+//
+//        Edit your grade ranges to include pluses and minuses (ex: 99-100 = A+).
