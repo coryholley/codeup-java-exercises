@@ -9,27 +9,42 @@ public class ControlFlowExercises {
         do
         {
             // Get input from the user
-            System.out.print("Enter an integer: ");
-            int integer = scanner.nextInt();
+            System.out.print("Enter a numerical grade from 0-100.\n");
+            int userInt = scanner.nextInt();
 
-            // Create a header
-            String header = "Number | " + "Squared | " + "Cubed   " + "\n"
-                    +   "------ | " + "------- | " + "-----   " + "\n";
-            System.out.format("%-6s", header);
+            //Grade Ranges
 
-            int square = 0;
-            int cube = 0;
+            String APlus = "A+: 100-95";
+            String AMinus = "A-: 94-88";
+            String BPlus = "B+: 87-85";
+            String BMinus = "B-: 84-80";
+            String CPlus = "C+: 79-75";
+            String CMinus = "C-: 74-67";
+            String DPlus = "D+: 66-63";
+            String DMinus = "D-: 62-60";
+            String FPlus = "F+: 59-30";
+            String FMinus = "F-: 29-0";
 
-            String row = "";
-            String leftAlign = " %-5d | %-7d | %-6d%n";
-
-            for (int i = 1; i <= integer; i++)
-            {
-
-                square = i * i;
-                cube = i * i * i;
-
-                System.out.format(leftAlign, i, square, cube);
+            if (userInt <= 100 && userInt >= 95) {
+                System.out.print(APlus+ "\n");
+            } else if (userInt <= 94 && userInt >= 88) {
+                System.out.print(AMinus + "\n");
+            } else if (userInt <= 87 && userInt >= 85) {
+                System.out.print(BPlus + "\n");
+            } else if (userInt <= 84 && userInt >= 80) {
+                System.out.print(BMinus + "\n");
+            } else if (userInt <= 79 && userInt >= 75){
+                System.out.print(CPlus + "\n");
+            } else if (userInt <= 74 && userInt >= 67){
+                System.out.print(CMinus + "\n");
+            } else if (userInt <= 66 && userInt >= 63){
+                System.out.print(DPlus + "\n");
+            } else if (userInt <= 62 && userInt >= 60){
+                System.out.print(DMinus + "\n");
+            } else if (userInt <= 59 && userInt >= 30){
+                System.out.print(FPlus + "\n");
+            } else {
+                System.out.print(FMinus + "\n");
             }
 
             // See if the user wants to continue
