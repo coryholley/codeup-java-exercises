@@ -21,8 +21,16 @@ public class MethodsExercises {
         return base - sub;
     }
 
+//    public static long multiplication(long base, long mult) {
+//        return base * mult;
+//    }
+
     public static long multiplication(long base, long mult) {
-        return base * mult;
+        long result = 0;
+        for (long i = 1; i <= mult; i++) {
+            result = result + base;
+        }
+        return result;
     }
 
     public static long division(long base, long divis) {
@@ -41,7 +49,7 @@ public class MethodsExercises {
 
         System.out.println(addition(5,5));
         System.out.println(subtraction(20, 10));
-        System.out.println(multiplication(5,2));
+        System.out.println(multiplication(20,6));
         System.out.println(division(20,2));
         System.out.println(modulus(3,2));
 
