@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class MethodsExercises {
 
-    Scanner scanner = new Scanner(System.in);
-
 //    public static long getPower(int base, int exponent) {
 //        if (exponent == 0) {
 //            return 1;
@@ -66,6 +64,33 @@ public class MethodsExercises {
 //        }
 //    };
 
+    public static long enterInteger () {
+
+        String choice = "Y";
+        long factorial = 0;
+
+        do {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter an integer between 1-10.");
+            int userInput = scanner.nextInt();
+
+            if (userInput >= 1 && userInput <= 10) {
+                factorial = 1;
+                for (long i = 1; i <= userInput; i++) {
+                    factorial = factorial * i;
+                }
+                System.out.println(factorial);
+                System.out.print("Would you like to continue? (y/n): ");
+                choice = scanner.next();
+                System.out.println();
+            } else {
+               return enterInteger();
+            }
+
+
+        } while (!choice.equalsIgnoreCase("n"));
+        return factorial;
+    };
 
 
     public static void main(String [] args) {
@@ -83,6 +108,9 @@ public class MethodsExercises {
 
 //        int userInput = getInteger(1, 10);
 //        System.out.println(userInput);
+
+        long factorial = enterInteger();
+        System.out.println(factorial);
 
 
     }
