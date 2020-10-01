@@ -71,10 +71,10 @@ public class MethodsExercises {
 
         do {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Please enter an integer between 1-10.");
+            System.out.println("Please enter an integer between 1-25."); //highest long return
             int userInput = scanner.nextInt();
 
-            if (userInput >= 1 && userInput <= 10) {
+            if (userInput >= 1 && userInput <= 25) {
                 factorial = 1;
                 for (long i = 1; i <= userInput; i++) {
                     factorial = factorial * i;
