@@ -67,14 +67,14 @@ public class MethodsExercises {
     public static long enterInteger () {
 
         String choice = "Y";
-        long factorial = 0;
+        long factorial;
 
         do {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Please enter an integer between 1-25."); //highest long return
+            System.out.println("Please enter an integer between 1-20."); //highest long return
             int userInput = scanner.nextInt();
 
-            if (userInput >= 1 && userInput <= 25) {
+            if (userInput >= 1 && userInput <= 20) {
                 factorial = 1;
                 for (long i = 1; i <= userInput; i++) {
                     factorial = factorial * i;
