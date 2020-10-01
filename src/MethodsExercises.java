@@ -25,12 +25,23 @@ public class MethodsExercises {
 //        return base * mult;
 //    }
 
+//    public static long multiplication(long base, long mult) {
+//        long result = 0;
+//        for (long i = 1; i <= mult; i++) {
+//            result = result + base;
+//        }
+//        return result;
+//    }
+
     public static long multiplication(long base, long mult) {
-        long result = 0;
-        for (long i = 1; i <= mult; i++) {
-            result = result + base;
-        }
-        return result;
+            if (mult == 0) {
+                return 0;
+            } else if (mult == 1) {
+                return base;
+            } else if (mult == 2) {
+                return base + base;
+            }
+            return base + multiplication(base, mult - 1);
     }
 
     public static long division(long base, long divis) {
