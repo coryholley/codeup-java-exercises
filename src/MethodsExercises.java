@@ -64,10 +64,48 @@ public class MethodsExercises {
 //        }
 //    };
 
-    public static long enterInteger () {
+//    public static long enterInteger () {
+//
+//        String choice = "Y";
+//        long factorial;
+//
+//        do {
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("Please enter an integer between 1-20."); //highest long return
+//            int userInput = scanner.nextInt();
+//
+//            if (userInput >= 1 && userInput <= 20) {
+//                factorial = 1;
+//                for (long i = 1; i <= userInput; i++) {
+//                    factorial = factorial * i;
+//                }
+//                System.out.println(factorial);
+//                System.out.print("Would you like to continue? (y/n): ");
+//                choice = scanner.next();
+//                System.out.println();
+//            } else {
+//               return enterInteger();
+//            }
+//
+//
+//        } while (!choice.equalsIgnoreCase("n"));
+//        return factorial;
+//    };
 
-        String choice = "Y";
-        long factorial;
+
+    public static long fact(long n) {
+        long output;
+        if (n == 1) {
+            return 1;
+        }
+        //Recursion: Function calling itself!!
+        output = fact(n - 1) * n;
+        return output;
+    };
+
+    public static long userFactorial() {
+        String choice = "y";
+        long fact = 0;
 
         do {
             Scanner scanner = new Scanner(System.in);
@@ -75,25 +113,20 @@ public class MethodsExercises {
             int userInput = scanner.nextInt();
 
             if (userInput >= 1 && userInput <= 20) {
-                factorial = 1;
-                for (long i = 1; i <= userInput; i++) {
-                    factorial = factorial * i;
-                }
-                System.out.println(factorial);
+                fact = fact(userInput);
+                System.out.println("The factorial of the number inputed is: "+fact);
                 System.out.print("Would you like to continue? (y/n): ");
                 choice = scanner.next();
                 System.out.println();
             } else {
-               return enterInteger();
+                return userFactorial();
             }
 
-
         } while (!choice.equalsIgnoreCase("n"));
-        return factorial;
+        return fact;
     };
 
-
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
 //        System.out.println(getPower(2,4));
@@ -109,9 +142,11 @@ public class MethodsExercises {
 //        int userInput = getInteger(1, 10);
 //        System.out.println(userInput);
 
-        long factorial = enterInteger();
-        System.out.println(factorial);
+//        long factorial = enterInteger();
+//        System.out.println(factorial);
 
+        long factorial = userFactorial();
+        System.out.println(factorial);
 
     }
 }
