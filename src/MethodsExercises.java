@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.lang.Math;
+import java.util.Arrays;
 
 public class MethodsExercises {
 
@@ -93,38 +95,71 @@ public class MethodsExercises {
 //    };
 
 
-    public static long fact(long n) {
-        long output;
-        if (n == 1) {
-            return 1;
+//    public static long fact(long n) {
+//        long output;
+//        if (n == 1) {
+//            return 1;
+//        }
+//        //Recursion: Function calling itself!!
+//        output = fact(n - 1) * n;
+//        return output;
+//    };
+//
+//    public static long userFactorial() {
+//        String choice = "y";
+//        long fact = 0;
+//
+//        do {
+//            Scanner scanner = new Scanner(System.in);
+//            System.out.println("Please enter an integer between 1-20."); //highest long return
+//            int userInput = scanner.nextInt();
+//
+//            if (userInput >= 1 && userInput <= 20) {
+//                fact = fact(userInput);
+//                System.out.println("The factorial of the number inputed is: "+fact);
+//                System.out.print("Would you like to continue? (y/n): ");
+//                choice = scanner.next();
+//                System.out.println();
+//            } else {
+//                return userFactorial();
+//            }
+//
+//        } while (!choice.equalsIgnoreCase("n"));
+//        return fact;
+//    };
+
+
+    public static int setDice(int n) {
+        return randomDiceNum(n);
+    };
+
+
+    public static int randomDiceNum(int numMax) {
+        //Defining method for a random number generator
+        int numMin = 1;
+        int range = (numMax - numMin) + 1;
+        return (int) (Math.random() * range) + numMin;
+    };
+
+    public static int[] rollDice() {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the number of sides for a pair of dice.");
+        int sideOne = scanner.nextInt();
+        int sideTwo = scanner.nextInt();
+        int[] numbers = {setDice(sideOne), setDice(sideTwo)};
+        System.out.println("Your random dice roll is " + Arrays.toString(numbers) + ". Would you like to continue?[y/n]");
+        String choice = scanner.next();
+
+        if (choice.equalsIgnoreCase("y")) {
+            numbers = rollDice();
+        } else {
+            return numbers;
         }
-        //Recursion: Function calling itself!!
-        output = fact(n - 1) * n;
-        return output;
+        return numbers;
     };
 
-    public static long userFactorial() {
-        String choice = "y";
-        long fact = 0;
 
-        do {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Please enter an integer between 1-20."); //highest long return
-            int userInput = scanner.nextInt();
-
-            if (userInput >= 1 && userInput <= 20) {
-                fact = fact(userInput);
-                System.out.println("The factorial of the number inputed is: "+fact);
-                System.out.print("Would you like to continue? (y/n): ");
-                choice = scanner.next();
-                System.out.println();
-            } else {
-                return userFactorial();
-            }
-
-        } while (!choice.equalsIgnoreCase("n"));
-        return fact;
-    };
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -145,8 +180,11 @@ public class MethodsExercises {
 //        long factorial = enterInteger();
 //        System.out.println(factorial);
 
-        long factorial = userFactorial();
-        System.out.println(factorial);
+//        long factorial = userFactorial();
+//        System.out.println(factorial);
+
+        int[] randomRoll = rollDice();
+        System.out.println(Arrays.toString(randomRoll));
 
     }
 }
