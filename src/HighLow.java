@@ -42,7 +42,7 @@ public class HighLow {
 
         public static void guessNumber() {
             int randomNum = randomNumber();
-            System.out.println(randomNum);
+//            System.out.println(randomNum);
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Please guess a number between 1 and 100");
