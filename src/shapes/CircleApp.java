@@ -11,7 +11,7 @@ public class CircleApp {
     };
 
     public static void countSetter() {
-        counter = counter+1;
+        counter += 1;
     };
 
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class CircleApp {
         Input userRadius = new Input();
 
         while (true) {
-            Circle newCircle = new Circle(userRadius.getDouble(1, 100, "Enter radius 1-100: "));
+            Circle newCircle = new Circle(userRadius.getDouble("Enter the radius of your circle. "));
             countSetter();
             System.out.println("The area of the circle is: " + newCircle.getArea());
             System.out.println("The circumference of the circle is: " + newCircle.getCircumference());
