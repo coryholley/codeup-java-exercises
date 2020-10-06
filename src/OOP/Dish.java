@@ -7,7 +7,7 @@ class Dish {
         boolean wouldRecommend;
 
         public void printSummary() {
-            System.out.printf("Cost:  %d\nName:  %s\nRecommended:  %b", costInCents, nameOfDish, wouldRecommend);
+            System.out.printf("Cost:  %d\nName:  %s\nRecommended:  %b\n", costInCents, nameOfDish, wouldRecommend);
         }
 
 //        - OOP SHORT ASSIGNMENT #1 --
@@ -20,5 +20,6 @@ class Dish {
 //        Cost: COST_IN_CENTS_HERE
 //        Name: NAME_OF_DISH_HERE
 //        Recommended: BOOLEAN_VALUE_OF_WOULD_RECOMMEND_HERE
+
 
 }
