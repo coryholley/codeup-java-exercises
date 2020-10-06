@@ -37,10 +37,10 @@ public class Input {
     public double getDouble(int min, int max, String prompt) {
         System.out.println(prompt);
 //        System.out.println("Please enter an double between " +min+ " and the " +max+ ".");
-        double response = scanner.nextInt();
+        double response = scanner.nextDouble();
         if (response < min || response > max) {
             System.out.println("You did not enter a valid number. Please try again.");
-            return getInt(min, max, prompt);
+            return getDouble(min, max, prompt);
         } else {
             return response;
         }
