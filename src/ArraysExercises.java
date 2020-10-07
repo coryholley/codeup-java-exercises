@@ -11,12 +11,6 @@ public class ArraysExercises {
         return copyPersons;
     }
 
-//    public static Movie[] addMovie(Movie[] arrayOfMovies, Movie movieToAdd) {
-//        Movie[] copyToReturn = Arrays.copyOf(arrayOfMovies, arrayOfMovies.length+1);
-//        copyToReturn[copyToReturn.length-1] = movieToAdd;
-//        return copyToReturn;
-//    }
-
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(numbers); //prints reference in stored memory
