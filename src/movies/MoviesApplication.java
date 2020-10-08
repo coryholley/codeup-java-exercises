@@ -20,48 +20,52 @@ public class MoviesApplication {
                 "6 - add a new movie");
 
         int userResponse = new Input().getInt("What would you like to do?");
-
+        Movie[] movies = MoviesArray.findAll();
 
         if (userResponse == 0) {
             System.exit(0);
         } else if (userResponse == 1) {
-            for (Movie movie : MoviesArray.findAll()) {
-                System.out.println(movie.getName());
+            for (Movie movie : movies) {
+                System.out.println(movie.getName() + " - " + movie.getCategory());
             }
         } else if (userResponse == 2) {
-            for (Movie movie : MoviesArray.findAll()) {
+            for (Movie movie : movies) {
                 if (movie.getCategory().equalsIgnoreCase("animated")) {
-                    System.out.println(movie.getName());
+                    System.out.println(movie.getName() + " - " + movie.getCategory());
                 }
             }
         } else if (userResponse == 3) {
-            for (Movie movie : MoviesArray.findAll()) {
+            for (Movie movie : movies) {
                 if (movie.getCategory().equalsIgnoreCase("drama")) {
-                    System.out.println(movie.getName());
+                    System.out.println(movie.getName() + " - " + movie.getCategory());
                 }
             }
         } else if (userResponse == 4) {
-            for (Movie movie : MoviesArray.findAll()) {
+            for (Movie movie : movies) {
                 if (movie.getCategory().equalsIgnoreCase("horror")) {
-                    System.out.println(movie.getName());
+                    System.out.println(movie.getName() + " - " + movie.getCategory());
                 }
             }
         } else if (userResponse == 5) {
-            for (Movie movie : MoviesArray.findAll()) {
+            for (Movie movie : movies) {
                 if (movie.getCategory().equalsIgnoreCase("sci-fi")) {
-                    System.out.println(movie.getName());
+                    System.out.println(movie.getName() + " - " + movie.getCategory());
                 }
             }
         } else if (userResponse == 6) {
             String newName = new Input().getString("Please enter the new movie name.");
             String newCategory = new Input().getString("Please enter the movie category/genre.");
-            for (Movie newMovies: addMovie(movies.MoviesArray.findAll(), new Movie(newName, newCategory))) {
-                System.out.println(newMovies.getName() + " ");
+            for (Movie newMovies: addMovie(movies, new Movie(newName, newCategory))) {
+                System.out.println(newMovies.getName() + " - " + newMovies.getCategory());
             }
+        } else {
+            System.out.println("You did not enter a valid number. Please try again.");
+            movieSelection();
         }
     }
 
     public static void main(String[] args) {
+
         boolean toContinue;
 
         do {
