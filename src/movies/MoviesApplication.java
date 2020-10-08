@@ -23,7 +23,7 @@ public class MoviesApplication {
 
 
         if (userResponse == 0) {
-            return;
+            System.exit(0);
         } else if (userResponse == 1) {
             for (Movie movie : MoviesArray.findAll()) {
                 System.out.println(movie.getName());
