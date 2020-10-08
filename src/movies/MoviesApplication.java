@@ -22,7 +22,9 @@ public class MoviesApplication {
         int userResponse = new Input().getInt("What would you like to do?");
 
 
-        if (userResponse == 1) {
+        if (userResponse == 0) {
+            return;
+        } else if (userResponse == 1) {
             for (Movie movie : MoviesArray.findAll()) {
                 System.out.println(movie.getName());
             }

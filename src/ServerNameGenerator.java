@@ -16,7 +16,7 @@ public class ServerNameGenerator {
         boolean toContinue;
 
         do {
-            System.out.println(randomReturn(ServerNameGenerator.adjectives) + "-" + randomReturn(ServerNameGenerator.nouns));
+            System.out.println(randomReturn(adjectives) + "-" + randomReturn(nouns));
             toContinue = new Input().yesNo("Would you like to continue? [y/n]");
         } while (toContinue);
     }
