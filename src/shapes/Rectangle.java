@@ -20,7 +20,7 @@ public class Rectangle extends Quadrilateral implements Measurable {
 
     @Override
     public double getPerimeter() {
-        double perimeter = 2 * this.length + 2 * this.width;
+        double perimeter = (2 * this.length) + (2 * this.width);
         return perimeter;
     }
 
@@ -41,7 +41,7 @@ public class Rectangle extends Quadrilateral implements Measurable {
 //    }
 //
 //    public int getPerimeter() {
-//        int perimeter = 2 * this.length + 2 * this.width;
+//        int perimeter = (2 * this.length) + (2 * this.width);
 //        return perimeter;
 //    }
 //
