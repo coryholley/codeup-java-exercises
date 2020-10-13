@@ -33,12 +33,12 @@ public class Student {
         studentGrades.add(grade);
     }
 
-    public static double getGradeAverage(Student student) {
+    public double getGradeAverage() {
         double grades = 0;
         double gradeAvg = 0;
-        for (int grade : student.studentGrades) {
+        for (int grade : this.studentGrades) {
             grades += grade;
-            gradeAvg = grades / student.studentGrades.size();
+            gradeAvg = grades / this.studentGrades.size();
         }
         return gradeAvg;
     }
@@ -47,7 +47,7 @@ public class Student {
         Student student1 = new Student("Bob");
         student1.studentGrades.add(80);
         student1.studentGrades.add(85);
-        System.out.println("Student1 Avg Grade: " +Student.getGradeAverage(student1));
+        System.out.println("Student1 Avg Grade: " +student1.getGradeAverage());
 
         System.out.println("Student1 Grades: ");
         for (int student : student1.studentGrades) {
@@ -57,7 +57,7 @@ public class Student {
         Student student2 = new Student("Cindy");
         student2.addGrade(90);
         student2.addGrade(95);
-        System.out.println("Student2 Avg Grade: " +Student.getGradeAverage(student2));
+        System.out.println("Student2 Avg Grade: " +student2.getGradeAverage());
 
         System.out.println("Student2 Grades: ");
         for (int student : student2.studentGrades) {
