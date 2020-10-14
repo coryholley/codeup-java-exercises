@@ -47,8 +47,8 @@ public class GroceryList {
             Input toContinue = new Input();
             Input toCreateList = new Input();
             Input toFinalize = new Input();
-            String categoryChoice;
-            GroceryList currentGroceryList;
+            String categoryChoice = "";
+            GroceryList currentGroceryList = new GroceryList(categoryChoice);
             Input newCategory = new Input();
 
             if (!toCreateList.yesNo("Hello! Would you like to create a grocery list?")) {
@@ -59,8 +59,8 @@ public class GroceryList {
                         System.out.println(category);
                     }
                     categoryChoice = new Input().getString("Please choose a category by name.");
-                    currentGroceryList = new GroceryList(categoryChoice);
-
+//                    currentGroceryList = new GroceryList(categoryChoice);
+                    currentGroceryList.setCategory(categoryChoice);
                     do {
                         String item = new Input().getString("Please enter the item you wish to add");
                         int howMany = new Input().getInt("Please enter the amount of the items you would like to add");
@@ -72,9 +72,9 @@ public class GroceryList {
 
                 System.out.println("Here is your grocery list: ");
                 Map<String, Integer> treeMap = new TreeMap<>(currentGroceryList.groceryItems);
-                System.out.println(currentGroceryList.getCategory());
+//                System.out.println(currentGroceryList.getCategory());
                 for (String key : treeMap.keySet()) {
-                    System.out.println(key + " - " + treeMap.get(key));
+                    System.out.println(currentGroceryList.getCategory() + " > " + key + " - " + treeMap.get(key));
                 }
             }
                 if (!toContinue.yesNo("Would you like to make a new list?")) {
