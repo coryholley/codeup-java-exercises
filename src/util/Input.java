@@ -35,17 +35,21 @@ public class Input {
     };
 
     public int getInt(int min, int max, String prompt) {
-        System.out.println(prompt);
-//        System.out.println("Please enter an integer between " +min+ " and the " +max+ ".");
-        String answer = scanner.nextLine();
-        int response = Integer.parseInt(answer);
-            if (response < min || response > max) {
-                System.out.println("You did not enter a valid number. Please try again.");
-            return getInt(min, max, prompt);
-        } else {
-            return response;
+        while (true) {
+            String response = getString("Please enter an integer between " + min +" and "+ max + ".");
+            int num;
+
+            try {
+                num = Integer.valueOf(response);
+            } catch (RuntimeException re) {
+                System.err.println("Must enter an integer.");
+                return getInt(min, max, prompt);
             }
-    };
+            if (num > min && num < max) {
+                return num;
+            }
+        }
+    }
 
     public double getDouble(String prompt) {
 //        System.out.println(prompt);
@@ -60,16 +64,21 @@ public class Input {
     };
 
     public double getDouble(int min, int max, String prompt) {
-        System.out.println(prompt);
+        while (true) {
+            String response = getString("Please enter a double between " + min +" and "+ max + ".");
+            double num;
 //        System.out.println("Please enter an double between " +min+ " and the " +max+ ".");
-        double response = scanner.nextDouble();
-        if (response < min || response > max) {
-            System.out.println("You did not enter a valid number. Please try again.");
-            return getDouble(min, max, prompt);
-        } else {
-            return response;
+            try {
+              num = Double.valueOf(response);
+            } catch (RuntimeException re) {
+                System.err.println("Must enter double.");
+                return getDouble(min, max, prompt);
+            }
+            if (num > min && num < max) {
+                return num;
+            }
         }
-    };
+    }
 
     public static String toBinaryString(int i){
         return Integer.toBinaryString(i);
@@ -90,19 +99,22 @@ public class Input {
     public static void main(String[] args) {
         Input test = new Input();
 
-        int response = test.getInt("Please enter an Integer");
-        System.out.println(response);
+//        int response = test.getInt("Please enter an Integer");
+//        System.out.println(response);
+//
+//        double userDouble = test.getDouble("Please enter a double");
+//        System.out.println(userDouble);
+//
+//        int l = 10;
+//        System.out.println("Binary is " + Integer.toBinaryString(l));
+//        System.out.println("Binary is " + getBinary("111"));
+//
+//        int x = 12;
+//        System.out.println("Hexadecimal is " + Integer.toHexString(x));
+//        System.out.println("Hexadecimal is " + getHex("10"));
 
-        double userDouble = test.getDouble("Please enter a double");
-        System.out.println(userDouble);
-
-        int l = 10;
-        System.out.println("Binary is " + Integer.toBinaryString(l));
-        System.out.println("Binary is " + getBinary("111"));
-
-        int x = 12;
-        System.out.println("Hexadecimal is " + Integer.toHexString(x));
-        System.out.println("Hexadecimal is " + getHex("10"));
+        test.getDouble(1,50,"Please enter a double");
+        test.getInt(1,50, "Please enter an int");
 
 
     }
