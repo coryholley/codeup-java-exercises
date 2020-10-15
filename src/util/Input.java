@@ -23,8 +23,12 @@ public class Input {
     };
 
     public int getInt(String prompt) {
-        System.out.println(prompt);
-        return scanner.nextInt();
+        try {
+            return Integer.valueOf(getString(prompt));
+        } catch (NumberFormatException nfe) {
+             System.err.println(nfe);
+             return getInt(prompt);
+        }
     };
 
     public int getInt(int min, int max, String prompt) {
@@ -41,8 +45,9 @@ public class Input {
     };
 
     public double getDouble(String prompt) {
-        System.out.println(prompt);
-        return scanner.nextDouble();
+//        System.out.println(prompt);
+        String response = getString(prompt);
+        return Double.valueOf(response);
     };
 
     public double getDouble(int min, int max, String prompt) {
@@ -56,5 +61,13 @@ public class Input {
             return response;
         }
     };
+
+    public static void main(String[] args) {
+        Input test = new Input();
+
+        int response = test.getInt("Please enter an Integer");
+        System.out.println(response);
+    }
+
 
 }
