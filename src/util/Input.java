@@ -36,7 +36,7 @@ public class Input {
 
     public int getInt(int min, int max, String prompt) {
         while (true) {
-            String response = getString("Please enter an integer between " + min +" and "+ max + ".");
+            String response = getString(prompt);
             int num;
 
             try {
@@ -65,7 +65,7 @@ public class Input {
 
     public double getDouble(int min, int max, String prompt) {
         while (true) {
-            String response = getString("Please enter a double between " + min +" and "+ max + ".");
+            String response = getString(prompt);
             double num;
 //        System.out.println("Please enter an double between " +min+ " and the " +max+ ".");
             try {
@@ -113,7 +113,7 @@ public class Input {
 //        System.out.println("Hexadecimal is " + Integer.toHexString(x));
 //        System.out.println("Hexadecimal is " + getHex("10"));
 
-        test.getDouble(1,50,"Please enter a double");
+        test.getDouble(1,50,"Please enter a double between 1 - 50.");
         test.getInt(1,50, "Please enter an int");
 
 
