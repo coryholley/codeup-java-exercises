@@ -11,6 +11,7 @@ public class ContactsApp {
         String directoryName = "Contacts_Manager_App";
         String fileName = "contacts.txt";
         Boolean toStartAgain;
+        Boolean toKeepAdding;
 
         Path dataFilePath = ContactsFile.createDirectoryAndFile(directoryName, fileName);
 //        contact.addContacts(dataFilePath);
@@ -30,11 +31,14 @@ public class ContactsApp {
                         ContactsFile.printFileContents(dataFilePath);
                         break;
                     case 2:
-                        ContactsFile contact = new ContactsFile();
-                        contact.addContacts(dataFilePath);
+                        do {
+                            ContactsFile contact = new ContactsFile();
+                            contact.addContacts(dataFilePath);
+                            toKeepAdding = ContactsFile.yesNo("Would you like to add another?");
+                        }while(toKeepAdding);
                         break;
                     case 3:
-                        //search
+                        ContactsFile.searchContact(dataFilePath);
                         break;
                     case 4:
                         ContactsFile.deleteContact(dataFilePath);

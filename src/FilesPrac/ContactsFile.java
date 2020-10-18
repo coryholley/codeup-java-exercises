@@ -76,6 +76,7 @@ public class ContactsFile {
     //PRINT CONTACT LIST
     public static void printFileContents(Path filePath) throws IOException {
         // Create a header
+        System.out.println();
         String header = "Name            | " + "Phone Number   | " + "\n"
                 +   "----------------------------------" + "\n";
 //        System.out.format("%-15s", header);
@@ -84,7 +85,7 @@ public class ContactsFile {
         List<String> fileContents = Files.readAllLines(filePath);
 
         for (String fileContent : fileContents) {
-            System.out.print(fileContent + "\n");
+            System.out.printf("%-16s", fileContent + "\n");
         }
 
     }
@@ -121,6 +122,24 @@ public class ContactsFile {
         }
         Files.write(filePath, modifiedList);
     }
+
+    public static void searchContact(Path filePath) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the first name of the contact you would like to find");
+        String firstNameDelete = scanner.nextLine();
+        System.out.println("Please enter the last name of the contact you would like to find.");
+        String lastNameDelete = scanner.nextLine();
+        List<String> fileContents = Files.readAllLines(filePath);
+
+        for (String contact: fileContents) {
+            if (contact.contains(firstNameDelete + " " + lastNameDelete)) {
+                System.out.println(contact);
+            }
+        }
+    }
+
+
+
 
     public static boolean yesNo(String prompt) {
         Scanner scanner = new Scanner(System.in);
