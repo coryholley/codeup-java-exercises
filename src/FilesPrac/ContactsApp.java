@@ -14,14 +14,9 @@ public class ContactsApp {
         Boolean toKeepAdding;
 
         Path dataFilePath = ContactsFile.createDirectoryAndFile(directoryName, fileName);
-//        contact.addContacts(dataFilePath);
 
-//        contact.printFileContents(dataFilePath);
-//        contact.deleteContact(dataFilePath);
 
-//        contact.printFileContents(dataFilePath);
-
-//        try {
+        try {
             System.out.println("\n"+"Welcome to your contacts manager. What would you like to do?"+"\n");
             do {
                 ContactsFile.printMenu();
@@ -49,10 +44,9 @@ public class ContactsApp {
                 }
                 toStartAgain = ContactsFile.yesNo("Would you like to see the menu again?");
             } while (toStartAgain);
-//        } catch (IOException ioex) {
-//            System.out.println("Error");
-//        }
-
+        } catch (IOException ioex) {
+            System.out.println("Error");
+        }
 
     }
 

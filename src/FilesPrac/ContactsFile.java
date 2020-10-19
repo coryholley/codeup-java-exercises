@@ -132,8 +132,11 @@ public class ContactsFile {
         List<String> fileContents = Files.readAllLines(filePath);
 
         for (String contact: fileContents) {
-            if (contact.contains(firstNameDelete + " " + lastNameDelete)) {
+            if (contact.toLowerCase().contains(firstNameDelete.toLowerCase() + " " + lastNameDelete.toLowerCase())) {
                 System.out.println(contact);
+            } else {
+                System.out.println("Contact does not exist, please try again.");
+                searchContact(filePath);
             }
         }
     }
