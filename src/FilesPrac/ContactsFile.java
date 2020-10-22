@@ -134,14 +134,12 @@ public class ContactsFile {
         for (String contact: fileContents) {
             if (contact.toLowerCase().contains(firstNameDelete.toLowerCase() + " " + lastNameDelete.toLowerCase())) {
                 System.out.println(contact);
-            } else {
-                System.out.println("Contact does not exist, please try again.");
-                searchContact(filePath);
+                return;
             }
         }
+        System.out.println("Contact does not exist. Please try again.");
+        searchContact(filePath);
     }
-
-
 
 
     public static boolean yesNo(String prompt) {
